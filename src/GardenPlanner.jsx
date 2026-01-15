@@ -149,7 +149,7 @@ const GardenPlanner = () => {
     const mid = Math.floor(sorted.length / 2);
     const medianDate = sorted[mid];
     // Return as YYYY-MM-DD for current year
-    return `2025-${String(medianDate.getMonth() + 1).padStart(2, '0')}-${String(medianDate.getDate()).padStart(2, '0')}`;
+    return `2026-${String(medianDate.getMonth() + 1).padStart(2, '0')}-${String(medianDate.getDate()).padStart(2, '0')}`;
   };
 
   // Detailed planting and care instructions for each plant
