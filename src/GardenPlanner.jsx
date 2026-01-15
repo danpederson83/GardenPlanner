@@ -266,7 +266,6 @@ const GardenPlanner = () => {
     })).filter(p => p.name);
 
     plantedData.forEach(plant => {
-      const qtyText = plant.quantity > 1 ? ` (×${plant.quantity})` : '';
       const instructions = getPlantInstructions(plant.name);
       
       if (plant.directSow) {
@@ -398,7 +397,7 @@ const GardenPlanner = () => {
   };
 
   // Generate monthly care tasks
-  const getMonthlyCareTasks = (monthName, tasks) => {
+  const getMonthlyCareTasks = (monthName) => {
     const careTasks = [];
     const placedCounts = getPlacedPlantCounts();
     const plantNames = Object.keys(placedCounts);
@@ -408,7 +407,7 @@ const GardenPlanner = () => {
     // Get month number for seasonal logic
     const monthNum = new Date(monthName + ' 1, 2025').getMonth();
     const isHotMonth = [5, 6, 7, 8].includes(monthNum); // June-September
-    const isCoolMonth = [2, 3, 4, 9, 10].includes(monthNum); // March-May, Oct-Nov
+    const _isCoolMonth = [2, 3, 4, 9, 10].includes(monthNum); // March-May, Oct-Nov
     
     // Group plants by water needs
     const highWaterPlants = plantNames.filter(name => {
@@ -679,7 +678,7 @@ const GardenPlanner = () => {
     };
   };
 
-  const getSelectedPlantCount = () => {
+  const _getSelectedPlantCount = () => {
     return selectedPlants.size;
   };
 
@@ -827,7 +826,7 @@ const GardenPlanner = () => {
   };
 
   // Check if a plant can be placed at a given position
-  const canPlacePlantAt = (bed, row, col, plantName) => {
+  const _canPlacePlantAt = (bed, row, col, plantName) => {
     const plant = recommendations?.plants.find(p => p.name === plantName);
     if (!plant) return false;
 
@@ -1004,12 +1003,12 @@ const GardenPlanner = () => {
   };
 
   // Launch dashboard after completing itinerary
-  const launchDashboard = () => {
+  const _launchDashboard = () => {
     setViewMode('dashboard');
   };
 
   // Generate PDF for download
-  const generatePDF = () => {
+  const _generatePDF = () => {
     const placedCounts = getPlacedPlantCounts();
     const groupedTasks = groupByMonth(itinerary);
     const frostData = frostDatesByRegion[formData.zipCode?.[0] || '5'];
