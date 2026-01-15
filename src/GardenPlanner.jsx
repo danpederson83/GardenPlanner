@@ -1679,6 +1679,7 @@ const GardenPlanner = () => {
             ].map(type => (
               <button
                 key={type.value}
+                type="button"
                 onClick={() => handleInputChange('gardenType', type.value)}
                 className={`p-4 rounded-lg border-2 text-left transition-all ${
                   formData.gardenType === type.value 
@@ -1716,6 +1717,7 @@ const GardenPlanner = () => {
             ].map(sun => (
               <button
                 key={sun.value}
+                type="button"
                 onClick={() => handleInputChange('sunExposure', sun.value)}
                 className={`p-3 rounded-lg border-2 text-center transition-all ${
                   formData.sunExposure === sun.value 
@@ -1740,6 +1742,7 @@ const GardenPlanner = () => {
             ].map(exp => (
               <button
                 key={exp.value}
+                type="button"
                 onClick={() => handleInputChange('experience', exp.value)}
                 className={`p-3 rounded-lg border-2 text-center transition-all ${
                   formData.experience === exp.value 
@@ -1758,6 +1761,7 @@ const GardenPlanner = () => {
           <label className="block text-sm font-medium text-gray-700 mb-2">Will kids be involved?</label>
           <div className="grid grid-cols-2 gap-3">
             <button
+              type="button"
               onClick={() => handleInputChange('kidFriendly', true)}
               className={`p-3 rounded-lg border-2 transition-all ${
                 formData.kidFriendly === true 
