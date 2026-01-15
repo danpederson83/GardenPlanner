@@ -1326,7 +1326,7 @@ const GardenPlanner = () => {
           </div>
         </div>
 
-        <div className="flex gap-3 print:hidden">
+        {/*<div className="flex gap-3 print:hidden">
           <button
             onClick={generatePDF}
             className="flex-1 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
@@ -1346,7 +1346,7 @@ const GardenPlanner = () => {
             <strong>💡 Tip:</strong> Download your itinerary as a PDF to keep a printable copy. 
             The "My Garden" dashboard is a premium feature for tracking daily tasks and progress.
           </p>
-        </div>
+        </div>*/}
       </div>
     );
   };
