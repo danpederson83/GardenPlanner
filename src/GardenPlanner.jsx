@@ -131,16 +131,16 @@ const GardenPlanner = () => {
 
   // Frost date data by first digit of ZIP code (rough approximation)
   const frostDatesByRegion = {
-    '0': { lastFrost: 'April 15 - May 15', firstFrost: 'September 30 - October 30', zone: '5-6', defaultDate: '2025-05-01', historicalDates: ['2024-05-03', '2023-04-28', '2022-05-07', '2021-04-25', '2020-05-01'] },
-    '1': { lastFrost: 'April 1 - May 1', firstFrost: 'October 15 - November 15', zone: '6-7', defaultDate: '2025-04-15', historicalDates: ['2024-04-12', '2023-04-18', '2022-04-14', '2021-04-20', '2020-04-15'] },
-    '2': { lastFrost: 'March 15 - April 15', firstFrost: 'October 30 - November 30', zone: '7-8', defaultDate: '2025-04-01', historicalDates: ['2024-03-28', '2023-04-02', '2022-03-30', '2021-04-05', '2020-03-31'] },
-    '3': { lastFrost: 'March 1 - April 1', firstFrost: 'November 15 - December 15', zone: '8-9', defaultDate: '2025-03-15', historicalDates: ['2024-03-12', '2023-03-18', '2022-03-14', '2021-03-20', '2020-03-16'] },
-    '4': { lastFrost: 'April 15 - May 15', firstFrost: 'September 30 - October 30', zone: '5-6', defaultDate: '2025-05-01', historicalDates: ['2024-05-05', '2023-04-30', '2022-05-08', '2021-04-28', '2020-05-02'] },
-    '5': { lastFrost: 'April 15 - May 15', firstFrost: 'September 30 - October 30', zone: '4-5', defaultDate: '2025-05-01', historicalDates: ['2024-05-08', '2023-05-02', '2022-05-10', '2021-04-30', '2020-05-05'] },
-    '6': { lastFrost: 'April 15 - May 15', firstFrost: 'October 1 - October 30', zone: '5-6', defaultDate: '2025-05-01', historicalDates: ['2024-05-03', '2023-04-28', '2022-05-05', '2021-04-26', '2020-04-30'] },
-    '7': { lastFrost: 'March 1 - April 1', firstFrost: 'November 1 - December 1', zone: '7-9', defaultDate: '2025-03-15', historicalDates: ['2024-03-10', '2023-03-16', '2022-03-12', '2021-03-18', '2020-03-14'] },
-    '8': { lastFrost: 'March 15 - May 15', firstFrost: 'September 30 - November 30', zone: '4-9', defaultDate: '2025-04-15', historicalDates: ['2024-04-18', '2023-04-12', '2022-04-20', '2021-04-14', '2020-04-16'] },
-    '9': { lastFrost: 'February 1 - April 15', firstFrost: 'November 1 - December 30', zone: '7-10', defaultDate: '2025-03-01', historicalDates: ['2024-02-28', '2023-03-05', '2022-03-01', '2021-03-08', '2020-03-02'] },
+    '0': { lastFrost: 'April 15 - May 15', firstFrost: 'September 30 - October 30', zone: '5-6', defaultDate: '2026-05-01', historicalDates: ['2024-05-03', '2023-04-28', '2022-05-07', '2021-04-25', '2020-05-01'] },
+    '1': { lastFrost: 'April 1 - May 1', firstFrost: 'October 15 - November 15', zone: '6-7', defaultDate: '2026-04-15', historicalDates: ['2024-04-12', '2023-04-18', '2022-04-14', '2021-04-20', '2020-04-15'] },
+    '2': { lastFrost: 'March 15 - April 15', firstFrost: 'October 30 - November 30', zone: '7-8', defaultDate: '2026-04-01', historicalDates: ['2024-03-28', '2023-04-02', '2022-03-30', '2021-04-05', '2020-03-31'] },
+    '3': { lastFrost: 'March 1 - April 1', firstFrost: 'November 15 - December 15', zone: '8-9', defaultDate: '2026-03-15', historicalDates: ['2024-03-12', '2023-03-18', '2022-03-14', '2021-03-20', '2020-03-16'] },
+    '4': { lastFrost: 'April 15 - May 15', firstFrost: 'September 30 - October 30', zone: '5-6', defaultDate: '2026-05-01', historicalDates: ['2024-05-05', '2023-04-30', '2022-05-08', '2021-04-28', '2020-05-02'] },
+    '5': { lastFrost: 'April 15 - May 15', firstFrost: 'September 30 - October 30', zone: '4-5', defaultDate: '2026-05-01', historicalDates: ['2024-05-08', '2023-05-02', '2022-05-10', '2021-04-30', '2020-05-05'] },
+    '6': { lastFrost: 'April 15 - May 15', firstFrost: 'October 1 - October 30', zone: '5-6', defaultDate: '2026-05-01', historicalDates: ['2024-05-03', '2023-04-28', '2022-05-05', '2021-04-26', '2020-04-30'] },
+    '7': { lastFrost: 'March 1 - April 1', firstFrost: 'November 1 - December 1', zone: '7-9', defaultDate: '2026-03-15', historicalDates: ['2024-03-10', '2023-03-16', '2022-03-12', '2021-03-18', '2020-03-14'] },
+    '8': { lastFrost: 'March 15 - May 15', firstFrost: 'September 30 - November 30', zone: '4-9', defaultDate: '2026-04-15', historicalDates: ['2024-04-18', '2023-04-12', '2022-04-20', '2021-04-14', '2020-04-16'] },
+    '9': { lastFrost: 'February 1 - April 15', firstFrost: 'November 1 - December 30', zone: '7-10', defaultDate: '2026-03-01', historicalDates: ['2024-02-28', '2023-03-05', '2022-03-01', '2021-03-08', '2020-03-02'] },
   };
 
   // Get median date from historical dates
@@ -1325,7 +1325,7 @@ const GardenPlanner = () => {
           </div>
         </div>
 
-        {/*<div className="flex gap-3 print:hidden">
+        <div className="flex gap-3 print:hidden">
           <button
             onClick={generatePDF}
             className="flex-1 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
@@ -1345,7 +1345,7 @@ const GardenPlanner = () => {
             <strong>💡 Tip:</strong> Download your itinerary as a PDF to keep a printable copy. 
             The "My Garden" dashboard is a premium feature for tracking daily tasks and progress.
           </p>
-        </div>*/}
+        </div>
       </div>
     );
   };
