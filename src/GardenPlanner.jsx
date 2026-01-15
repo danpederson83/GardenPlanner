@@ -2187,12 +2187,22 @@ const GardenPlanner = () => {
                                 setHoveredCell({ row, col });
                               }
                             }}
+                            onTouchStart={() => {
+                              // Set hovered cell on touch for mobile preview
+                              if (draggedPlant && !occupant) {
+                                setHoveredCell({ row, col });
+                              }
+                            }}
                             onClick={() => {
                               if (occupant && occupant.isOrigin) {
                                 removePlantFromBed(currentBed.id, occupant.id);
-                              } else if (!occupant && draggedPlant && preview.canPlace) {
-                                placePlant(currentBed.id, row, col, draggedPlant);
-                                setHoveredCell(null);
+                              } else if (!occupant && draggedPlant) {
+                                // Calculate canPlace directly for touch/click (don't rely on hover preview)
+                                const clickPreview = getPreviewCells(currentBed, row, col, draggedPlant);
+                                if (clickPreview.canPlace) {
+                                  placePlant(currentBed.id, row, col, draggedPlant);
+                                  setHoveredCell(null);
+                                }
                               }
                             }}
                             title={
