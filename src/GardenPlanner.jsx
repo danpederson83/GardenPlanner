@@ -1003,12 +1003,12 @@ const GardenPlanner = () => {
   };
 
   // Launch dashboard after completing itinerary
-  const _launchDashboard = () => {
+  const launchDashboard = () => {
     setViewMode('dashboard');
   };
 
   // Generate PDF for download
-  const _generatePDF = () => {
+  const generatePDF = () => {
     const placedCounts = getPlacedPlantCounts();
     const groupedTasks = groupByMonth(itinerary);
     const frostData = frostDatesByRegion[formData.zipCode?.[0] || '5'];
