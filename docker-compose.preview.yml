@@ -1,0 +1,9 @@
+services:
+  frontend-preview:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gardenplanner-frontend-preview
+    restart: unless-stopped
+    ports:
+      - "8083:80"
